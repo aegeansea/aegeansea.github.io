@@ -18,6 +18,7 @@ tags:
 
 我所总结的是单纯地利用GitHub Pages搭建自己独立博客的过程，并没有额外使用独立域名之类的（谁让我现在还没工资 o(^▽^)o ）。
 
+日常提交  git add . && git commit -m “20160614224032” && git push origin hexo && hexo g -d ;
 <!-- more -->
 
 如果是小小白，可以先花时间去了解下：
@@ -245,7 +246,8 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：
 
 1. 依次执行git add .、git commit -m "..."、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；
-2. 然后才执行hexo generate -d发布网站到master分支上。
+2. 完整指令 git add . && git commit -m "20160614224032" && git push origin hexo && hexo g -d ;
+3. 然后才执行hexo generate -d发布网站到master分支上。
 
 虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催....的情况，调转顺序就有问题了）。
 
