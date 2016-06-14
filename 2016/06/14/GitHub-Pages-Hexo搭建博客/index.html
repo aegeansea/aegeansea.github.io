@@ -16,7 +16,7 @@
 <meta property="og:description" content="一、 前言这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。
 作为一个前端小白，虽说是个码农，但是一开始照着网上的各种教程去搭建的时候，还是云里雾里的。记得几个月前刚接触GitHub（哈哈，对大四来说确实有点晚），对版本控制一点概念都没有，更别说使用GitHub Page能做出一个好看又好用的博客了。所以第一次的尝试失败了。
 后来的两三个月里，开始逐渐地把日常的学习都迁移到G">
-<meta property="og:updated_time" content="2016-06-14T14:19:33.105Z">
+<meta property="og:updated_time" content="2016-06-14T14:45:17.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pages + Hexo搭建博客">
 <meta name="twitter:description" content="一、 前言这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。
@@ -169,7 +169,7 @@
 <p>作为一个前端小白，虽说是个码农，但是一开始照着网上的各种教程去搭建的时候，还是云里雾里的。记得几个月前刚接触GitHub（哈哈，对大四来说确实有点晚），对版本控制一点概念都没有，更别说使用GitHub Page能做出一个好看又好用的博客了。所以第一次的尝试失败了。</p>
 <p>后来的两三个月里，开始逐渐地把日常的学习都迁移到GitHub上进行，慢慢熟悉了Git的版本控制。之后，因为嫌弃csdn和博客园的样子（颜值控），最终又回归到搭建独立博客的光明大道上。</p>
 <p>我所总结的是单纯地利用GitHub Pages搭建自己独立博客的过程，并没有额外使用独立域名之类的（谁让我现在还没工资 o(^▽^)o ）。</p>
-<a id="more"></a>
+<p>日常提交  git add . &amp;&amp; git commit -m “20160614224032” &amp;&amp; git push origin hexo &amp;&amp; hexo g -d ;<br><a id="more"></a></p>
 <p>如果是小小白，可以先花时间去了解下：</p>
 <ul>
 <li><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a></li>
@@ -275,6 +275,7 @@
 <h3 id="4-3-我的博客管理流程"><a href="#4-3-我的博客管理流程" class="headerlink" title="4.3 我的博客管理流程"></a>4.3 我的博客管理流程</h3><h4 id="4-3-1-日常修改"><a href="#4-3-1-日常修改" class="headerlink" title="4.3.1 日常修改"></a>4.3.1 日常修改</h4><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
 <ol>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>完整指令 git add . &amp;&amp; git commit -m “20160614224032” &amp;&amp; git push origin hexo &amp;&amp; hexo g -d ;</li>
 <li>然后才执行hexo generate -d发布网站到master分支上。</li>
 </ol>
 <p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
