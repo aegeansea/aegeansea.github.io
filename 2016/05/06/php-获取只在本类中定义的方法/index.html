@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>php 获取只在本类中定义的方法 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注意实例化不要在父类的初始化构造方法中进行，会导致死循环。
+测试代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * 获取类中非继承方法和重写方法 * 只获取在本类中声明的方法，包含重写的父类方法，其他继承自父类但未重写的，不获取 * 例 * class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php 获取只在本类中定义的方法">
+<meta property="og:url" content="http://yoursite.com/2016/05/06/php-获取只在本类中定义的方法/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="注意实例化不要在父类的初始化构造方法中进行，会导致死循环。
+测试代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * 获取类中非继承方法和重写方法 * 只获取在本类中声明的方法，包含重写的父类方法，其他继承自父类但未重写的，不获取 * 例 * class">
+<meta property="og:updated_time" content="2016-05-05T22:56:44.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php 获取只在本类中定义的方法">
+<meta name="twitter:description" content="注意实例化不要在父类的初始化构造方法中进行，会导致死循环。
+测试代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * 获取类中非继承方法和重写方法 * 只获取在本类中声明的方法，包含重写的父类方法，其他继承自父类但未重写的，不获取 * 例 * class">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-php-获取只在本类中定义的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/06/php-获取只在本类中定义的方法/" class="article-date">
+  	<time datetime="2016-05-05T22:37:01.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php 获取只在本类中定义的方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>实例化不要在父类的初始化构造方法中进行，会导致死循环。</p>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 获取类中非继承方法和重写方法</span><br><span class="line"> * 只获取在本类中声明的方法，包含重写的父类方法，其他继承自父类但未重写的，不获取</span><br><span class="line"> * 例</span><br><span class="line"> * class A&#123;</span><br><span class="line"> *      public function a1()&#123;&#125;</span><br><span class="line"> *      public function a2()&#123;&#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> * class B extends A&#123;</span><br><span class="line"> *      public function b1()&#123;&#125;</span><br><span class="line"> *      public function a1()&#123;&#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> * getMethods('B')返回方法名b1和a1，a2虽然被B继承了，但未重写，故不返回</span><br><span class="line"> * <span class="doctag">@param</span> string $classname 类名</span><br><span class="line"> * <span class="doctag">@param</span> string $access public or protected  or private or final 方法的访问权限</span><br><span class="line"> * <span class="doctag">@return</span> array(methodname=&gt;access)  or array(methodname) 返回数组，如果第二个参数有效，</span><br><span class="line">     * 则返回以方法名为key，访问权限为value的数组</span><br><span class="line"> * <span class="doctag">@see</span>  使用了命名空间，故在new 时类前加反斜线；如果此此函数不是作为类中方法使用，可能由于权限问题，</span><br><span class="line">     *   只能获得public方法</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getMethods</span><span class="params">($classname,$access=null)</span></span>&#123;</span><br><span class="line">    $class = <span class="keyword">new</span> \ReflectionClass($classname);</span><br><span class="line">    $methods = $class-&gt;getMethods();</span><br><span class="line">    $returnArr = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">foreach</span>($methods <span class="keyword">as</span> $value)&#123;</span><br><span class="line">        <span class="keyword">if</span>($value-&gt;class == $classname)&#123;</span><br><span class="line">            <span class="keyword">if</span>($access != <span class="keyword">null</span>)&#123;</span><br><span class="line">                $methodAccess = <span class="keyword">new</span> \ReflectionMethod($classname,$value-&gt;name);</span><br><span class="line">                <span class="keyword">switch</span>($access)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'public'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isPublic())$returnArr[$value-&gt;name] = <span class="string">'public'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'protected'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isProtected())$returnArr[$value-&gt;name] = <span class="string">'protected'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'private'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isPrivate())$returnArr[$value-&gt;name] = <span class="string">'private'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'final'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isFinal())$returnArr[$value-&gt;name] = <span class="string">'final'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                array_push($returnArr,$value-&gt;name);</span><br><span class="line">            &#125;</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $returnArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/06/多个jQuery版本共存的处理方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          多个jQuery版本共存的处理方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/29/Sublime-Text-快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sublime Text 快捷键</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

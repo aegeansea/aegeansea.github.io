@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>多个github帐号的SSH key切换 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一台电脑上有一个ssh key，在github上提交代码，由于其他原因你可能会在一台电脑上提交到不同的github上，怎么办呢…
+假设你电脑上一个ssh key都没有,如果有默认的一个了，请直接生成第二个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多个github帐号的SSH key切换">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/多个github帐号的SSH-key切换/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="一台电脑上有一个ssh key，在github上提交代码，由于其他原因你可能会在一台电脑上提交到不同的github上，怎么办呢…
+假设你电脑上一个ssh key都没有,如果有默认的一个了，请直接生成第二个">
+<meta property="og:updated_time" content="2016-06-14T08:27:33.908Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多个github帐号的SSH key切换">
+<meta name="twitter:description" content="一台电脑上有一个ssh key，在github上提交代码，由于其他原因你可能会在一台电脑上提交到不同的github上，怎么办呢…
+假设你电脑上一个ssh key都没有,如果有默认的一个了，请直接生成第二个">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-多个github帐号的SSH-key切换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/24/多个github帐号的SSH-key切换/" class="article-date">
+  	<time datetime="2016-03-24T00:59:41.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      多个github帐号的SSH key切换
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH-key/">SSH key</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一台电脑上有一个ssh key，在github上提交代码，由于其他原因<br>你可能会在一台电脑上提交到不同的github上，怎么办呢…</p>
+<p>假设你电脑上一个ssh key都没有,如果有默认的一个了，请直接生成第二个<br><a id="more"></a></p>
+<h3 id="一、生成并添加第一个ssh-key"><a href="#一、生成并添加第一个ssh-key" class="headerlink" title="一、生成并添加第一个ssh key"></a>一、生成并添加第一个ssh key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@xxx.com"</span></span><br></pre></td></tr></table></figure>
+<p>在Git Bash中执行命令一路回车，会在~/.ssh/目录下生成id_rsa和id_rsa.pub两个文件</p>
+<p>用文本编辑器打开id_rsa.pub里的内容，在Github中添加SSH Keys</p>
+<h3 id="二、生成并添加第二个ssh-key"><a href="#二、生成并添加第二个ssh-key" class="headerlink" title="二、生成并添加第二个ssh key"></a>二、生成并添加第二个ssh key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@xxx.com"</span></span><br><span class="line">或者 指定生成目录及文件名</span><br><span class="line">$ ssh-keygen -t rsa <span class="_">-f</span> /tmp/id_rsa.sohu -C <span class="string">"youremail@xxx.com"</span></span><br></pre></td></tr></table></figure>
+<p>如果未指定目录，则这次不要一路回车了，给这个文件起一个名字 不然默认的话就覆盖了之前生成的第一个</p>
+<h3 id="三、在-ssh-下创建config文件-内容如下："><a href="#三、在-ssh-下创建config文件-内容如下：" class="headerlink" title="三、在.ssh/下创建config文件 内容如下："></a>三、在.ssh/下创建config文件 内容如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Host github.com  </span><br><span class="line">    HostName github.com  </span><br><span class="line">    PreferredAuthentications publickey  </span><br><span class="line">    IdentityFile ~/.ssh/id_rsa  </span><br><span class="line">  </span><br><span class="line">Host my.github.com  </span><br><span class="line">    HostName github.com  </span><br><span class="line">    IdentityFile ~/.ssh/my </span><br><span class="line"></span><br><span class="line">Host oschina.net</span><br><span class="line">    HostName git.oschina.net</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<p>Host名字随意，接下来会用到。</p>
+<h3 id="四、测试配置是否正确"><a href="#四、测试配置是否正确" class="headerlink" title="四、测试配置是否正确"></a>四、测试配置是否正确</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果出现Hi xxx!You’ve successfully authenticated 就说明连接成功了</p>
+<h3 id="五、现在就以下种情况给出不同的做法："><a href="#五、现在就以下种情况给出不同的做法：" class="headerlink" title="五、现在就以下种情况给出不同的做法："></a>五、现在就以下种情况给出不同的做法：</h3><ul>
+<li><p>本地已经创建或已经clone到本地：</p>
+<p>  如下两种解决方法：</p>
+<p>  打开.git/config文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更改[remote "origin"]项中的url中的  </span></span><br><span class="line"><span class="comment">#my.github.com 对应上面配置的host  </span></span><br><span class="line">[remote <span class="string">"origin"</span>]  </span><br><span class="line">    url = git@my.github.com:itmyline/blog.git</span><br></pre></td></tr></table></figure>
+<p>  或者在Git Bash中提交的时候修改remote </p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm origin  </span><br><span class="line">$ git remote add origin git@my.github.com:itmyline/blog.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>clone仓库时对应配置host对应的账户</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#my.github.com对应一个账号  </span></span><br><span class="line">git <span class="built_in">clone</span> git@my.github.com:username/repo.git</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/28/php-打印调用函数入口地址-堆栈/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          php 打印调用函数入口地址(堆栈)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/23/git不追踪已经在版本库中的文件修改/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git不追踪已经在版本库中的文件修改</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
