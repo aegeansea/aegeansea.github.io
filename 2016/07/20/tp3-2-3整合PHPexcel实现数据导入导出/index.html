@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>tp3.2.3整合PHPexcel实现数据导入导出 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一. 引入PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tp3.2.3整合PHPexcel实现数据导入导出">
+<meta property="og:url" content="http://yoursite.com/2016/07/20/tp3-2-3整合PHPexcel实现数据导入导出/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="一. 引入PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。">
+<meta property="og:updated_time" content="2016-07-20T06:10:03.369Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tp3.2.3整合PHPexcel实现数据导入导出">
+<meta name="twitter:description" content="一. 引入PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-tp3-2-3整合PHPexcel实现数据导入导出" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/20/tp3-2-3整合PHPexcel实现数据导入导出/" class="article-date">
+  	<time datetime="2016-07-20T05:39:17.000Z" itemprop="datePublished">2016-07-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tp3.2.3整合PHPexcel实现数据导入导出
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHPexcel/">PHPexcel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tp3-2-3/">tp3.2.3</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一-引入"><a href="#一-引入" class="headerlink" title="一. 引入"></a>一. 引入</h3><p>PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。<br><a id="more"></a></p>
+<h3 id="二-导出"><a href="#二-导出" class="headerlink" title="二. 导出"></a>二. 导出</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">*   方法名:    getExcel</span><br><span class="line">*   作用  :将数据导出excel表格</span><br><span class="line">*   <span class="doctag">@date</span>   2015/03/26</span><br><span class="line">*   <span class="doctag">@author</span> dingling</span><br><span class="line">*   <span class="doctag">@param</span>1 文件名</span><br><span class="line">*   <span class="doctag">@param</span>2 字段名</span><br><span class="line">*   <span class="doctag">@param</span>3 数据</span><br><span class="line">*   <span class="doctag">@return</span> excel文件</span><br><span class="line">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getExcel</span><span class="params">($fileName, $headArr, $data)</span></span>&#123;</span><br><span class="line">    <span class="comment">//对数据进行检验</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">empty</span>($data) || !is_array($data))&#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"数据必须为数组"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//检查文件名</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">empty</span>($fileName))&#123;</span><br><span class="line">        <span class="keyword">exit</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//组装文件名</span></span><br><span class="line">    $date = date(<span class="string">"Y_m_d_H_i_s"</span>,time());</span><br><span class="line">    $fileName .= <span class="string">"_&#123;$date&#125;.xls"</span>;</span><br><span class="line"></span><br><span class="line">    error_reporting(E_ALL);</span><br><span class="line">    ini_set(<span class="string">'display_errors'</span>, <span class="keyword">TRUE</span>);</span><br><span class="line">    ini_set(<span class="string">'display_startup_errors'</span>, <span class="keyword">TRUE</span>);</span><br><span class="line">    date_default_timezone_set(<span class="string">'PRC'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (PHP_SAPI == <span class="string">'cli'</span>) &#123;</span><br><span class="line">      <span class="keyword">die</span>(<span class="string">'只能通过浏览器运行'</span>); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//导入PHPExcel类库，因为PHPExcel没有用命名空间，只能inport导入</span></span><br><span class="line">    import(<span class="string">"Org.Util.PHPExcel"</span>);</span><br><span class="line">    import(<span class="string">"Org.Util.PHPExcel.Writer.Excel5"</span>);</span><br><span class="line">    import(<span class="string">"Org.Util.PHPExcel.IOFactory.php"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建PHPExcel对象，注意，不能少了\</span></span><br><span class="line">    $objPHPExcel = <span class="keyword">new</span> \PHPExcel();</span><br><span class="line">    $objProps = $objPHPExcel-&gt;getProperties();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置表头</span></span><br><span class="line">    $key = ord(<span class="string">"A"</span>);<span class="comment">//A--65</span></span><br><span class="line">    $key2 = ord(<span class="string">"@"</span>);<span class="comment">//@--64</span></span><br><span class="line">    <span class="keyword">foreach</span>($headArr <span class="keyword">as</span> $v)&#123;</span><br><span class="line">        <span class="keyword">if</span>($key&gt;ord(<span class="string">"Z"</span>))&#123;</span><br><span class="line">            $key2 += <span class="number">1</span>;</span><br><span class="line">            $key = ord(<span class="string">"A"</span>);</span><br><span class="line">            $colum = chr($key2).chr($key);<span class="comment">//超过26个字母时才会启用  dingling 20150626</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($key2&gt;=ord(<span class="string">"A"</span>))&#123;</span><br><span class="line">                $colum = chr($key2).chr($key);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $colum = chr($key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        $objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>) -&gt;setCellValue($colum.<span class="string">'1'</span>, $v);</span><br><span class="line">        $key += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $column = <span class="number">2</span>;</span><br><span class="line">    $objActSheet = $objPHPExcel-&gt;getActiveSheet();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span>($data <span class="keyword">as</span> $key =&gt; $rows)&#123; <span class="comment">//行写入</span></span><br><span class="line">        $span = ord(<span class="string">"A"</span>);</span><br><span class="line">        $span2 = ord(<span class="string">"@"</span>);</span><br><span class="line">        <span class="keyword">foreach</span>($headArr <span class="keyword">as</span> $k=&gt;$v)&#123;</span><br><span class="line">            <span class="keyword">if</span>($span&gt;ord(<span class="string">"Z"</span>))&#123;</span><br><span class="line">                $span2 += <span class="number">1</span>;</span><br><span class="line">                $span = ord(<span class="string">"A"</span>);</span><br><span class="line">                $j = chr($span2).chr($span);<span class="comment">//超过26个字母时才会启用  dingling 20150626</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>($span2&gt;=ord(<span class="string">"A"</span>))&#123;</span><br><span class="line">                    $j = chr($span2).chr($span);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    $j = chr($span);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//$j = chr($span);</span></span><br><span class="line">            $objActSheet-&gt;setCellValue($j.$column, strip_tags($rows[$k]));</span><br><span class="line">            $span++;</span><br><span class="line">        &#125;</span><br><span class="line">        $column++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $fileName = iconv(<span class="string">"utf-8"</span>, <span class="string">"gb2312"</span>, $fileName);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// $objPHPExcel-&gt;getActiveSheet()-&gt;setTitle('CNLINK');// 重命名表</span></span><br><span class="line">    $objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);<span class="comment">// 设置活动单指数到第一个表,所以Excel打开这是第一个表</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Redirect output to a client’s web browser (Excel5)</span></span><br><span class="line">    header(<span class="string">'Content-Type: application/vnd.ms-excel'</span>);</span><br><span class="line">    header(<span class="string">"Content-Disposition: attachment;filename=\"$fileName\""</span>);</span><br><span class="line">    header(<span class="string">'Cache-Control: max-age=0'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If you're serving to IE 9, then the following may be needed</span></span><br><span class="line">    header(<span class="string">'Cache-Control: max-age=1'</span>);</span><br><span class="line">    <span class="comment">// If you're serving to IE over SSL, then the following may be needed</span></span><br><span class="line">    header (<span class="string">'Expires: Mon, 26 Jul 1997 05:00:00 GMT'</span>); <span class="comment">// Date in the past</span></span><br><span class="line">    header (<span class="string">'Last-Modified: '</span>.gmdate(<span class="string">'D, d M Y H:i:s'</span>).<span class="string">' GMT'</span>); <span class="comment">// always modified</span></span><br><span class="line">    header (<span class="string">'Cache-Control: cache, must-revalidate'</span>); <span class="comment">// HTTP/1.1</span></span><br><span class="line">    header (<span class="string">'Pragma: public'</span>); <span class="comment">// HTTP/1.0</span></span><br><span class="line"></span><br><span class="line">    $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, <span class="string">'Excel5'</span>);</span><br><span class="line">    <span class="comment">// $objWriter-&gt;save('1.xls');</span></span><br><span class="line">    <span class="comment">// echo str_replace('.php', '.xls', __FILE__);</span></span><br><span class="line">    $objWriter-&gt;save(<span class="string">'php://output'</span>); <span class="comment">//文件通过浏览器下载</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">exit</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三-导入"><a href="#三-导入" class="headerlink" title="三. 导入"></a>三. 导入</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//导入数据方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">import</span><span class="params">($filename, $exts=<span class="string">'xls'</span>)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//导入PHPExcel类库，因为PHPExcel没有用命名空间，只能inport导入</span></span><br><span class="line">    import(<span class="string">"Org.Util.PHPExcel"</span>);</span><br><span class="line">    <span class="comment">//创建PHPExcel对象，注意，不能少了\</span></span><br><span class="line">    $PHPExcel=<span class="keyword">new</span> \PHPExcel();</span><br><span class="line">    <span class="comment">//如果excel文件后缀名为.xls，导入这个类</span></span><br><span class="line">    <span class="keyword">if</span>($exts == <span class="string">'xls'</span>)&#123;</span><br><span class="line">        import(<span class="string">"Org.Util.PHPExcel.Reader.Excel5"</span>);</span><br><span class="line">        $PHPReader=<span class="keyword">new</span> \PHPExcel_Reader_Excel5();</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>($exts == <span class="string">'xlsx'</span>)&#123;</span><br><span class="line">        import(<span class="string">"Org.Util.PHPExcel.Reader.Excel2007"</span>);</span><br><span class="line">        $PHPReader=<span class="keyword">new</span> \PHPExcel_Reader_Excel2007();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//载入文件</span></span><br><span class="line">    $PHPExcel=$PHPReader-&gt;load($filename);</span><br><span class="line">    <span class="comment">//获取表中的第一个工作表，如果要获取第二个，把0改为1，依次类推</span></span><br><span class="line">    $currentSheet=$PHPExcel-&gt;getSheet(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//获取总列数</span></span><br><span class="line">    $allColumn=$currentSheet-&gt;getHighestColumn();</span><br><span class="line">    <span class="comment">//获取总行数</span></span><br><span class="line">    $allRow=$currentSheet-&gt;getHighestRow();</span><br><span class="line">    <span class="comment">//循环获取表中的数据，$currentRow表示当前行，从哪行开始读取数据，索引值从0开始</span></span><br><span class="line">    <span class="keyword">for</span>($currentRow=<span class="number">1</span>;$currentRow&lt;=$allRow;$currentRow++)&#123;</span><br><span class="line">        <span class="comment">//从哪列开始，A表示第一列</span></span><br><span class="line">        <span class="keyword">for</span>($currentColumn=<span class="string">'A'</span>;$currentColumn&lt;=$allColumn;$currentColumn++)&#123;</span><br><span class="line">            <span class="comment">//数据坐标</span></span><br><span class="line">            $address=$currentColumn.$currentRow;</span><br><span class="line">            <span class="comment">//读取到的数据，保存到数组$arr中</span></span><br><span class="line">            $cell =$currentSheet-&gt;getCell($address)-&gt;getValue();</span><br><span class="line">            <span class="comment">//$cell = $data[$currentRow][$currentColumn];</span></span><br><span class="line">            <span class="keyword">if</span>($cell <span class="keyword">instanceof</span> PHPExcel_RichText)&#123;</span><br><span class="line">                $cell  = $cell-&gt;__toString();</span><br><span class="line">            &#125;</span><br><span class="line">            print_r($cell);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四-问题"><a href="#四-问题" class="headerlink" title="四. 问题"></a>四. 问题</h3><p>在excel中如果在一个默认的格中输入或复制超长数字字符串，它会显示为科学计算法，例如身份证号码，解决方法是把表格设置文本格式或在输入前加一个单引号。</p>
+<p>使用PHPExcel来生成excel，也会遇到同样的问题，解决方法有三种：<br>1、设置单元格为文本<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(<span class="string">'Simple'</span>);</span><br><span class="line"><span class="comment">//设置A3单元格为文本</span></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A3'</span>)-&gt;getNumberFormat()</span><br><span class="line">    -&gt;setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_TEXT);</span><br><span class="line"><span class="comment">//也可以设置整行或整列的style</span></span><br><span class="line"><span class="comment">/*</span><br><span class="line">//E 列为文本</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('E')-&gt;getNumberFormat()</span><br><span class="line">    -&gt;setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_TEXT);</span><br><span class="line">//第三行为文本</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('3')-&gt;getNumberFormat()</span><br><span class="line">    -&gt;setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_TEXT);</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<p>更多的格式可以在PHPExcel/Style/NumberFormat.php中找到。注意：上述的设置对长数字字符串还是以文本方式来显示科学计数法的结果，原因可能php在处理大数字时采用的科学计数法<br>2、在设置值的时候显示的指定数据类型<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(<span class="string">'Simple'</span>);</span><br><span class="line"></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValueExplicit(<span class="string">'D1'</span>,</span><br><span class="line">                                 <span class="number">123456789033</span>, </span><br><span class="line">                                 PHPExcel_Cell_DataType::TYPE_STRING);</span><br></pre></td></tr></table></figure></p>
+<p>3、在数字字符串前加一个空格使之成为字符串<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(<span class="string">'Simple'</span>);</span><br><span class="line"></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(<span class="string">'D1'</span>, <span class="string">' '</span> . <span class="number">123456789033</span>);</span><br></pre></td></tr></table></figure></p>
+<p>推荐使用第二、三种，第一种没有根本解决问题。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.gouguoyin.cn/php/4.html" target="_blank" rel="external">THINKPHP3.2.3整合PHPexcel实现数据的导入导出（含数据库）</a><br><a href="http://www.gouguoyin.cn/php/83.html" target="_blank" rel="external">PHPExcel 长数字串显示为科学计数的解决方法</a><br><a href="http://pan.baidu.com/s/1pLs31wv" target="_blank" rel="external">百度云参考代码</a> qqia</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/20/表单提交请求导出Excel表格的实现代码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          表单提交请求导出Excel表格的实现代码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/01/搜狗输入法自定义短语设置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搜狗输入法自定义短语设置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

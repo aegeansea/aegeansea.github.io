@@ -122,6 +122,153 @@
 
       <div class="body-wrap">
   
+    <article id="post-php-获取只在本类中定义的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/06/php-获取只在本类中定义的方法/" class="article-date">
+  	<time datetime="2016-05-05T22:37:01.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/php-获取只在本类中定义的方法/">php 获取只在本类中定义的方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>实例化不要在父类的初始化构造方法中进行，会导致死循环。</p>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 获取类中非继承方法和重写方法</span><br><span class="line"> * 只获取在本类中声明的方法，包含重写的父类方法，其他继承自父类但未重写的，不获取</span><br><span class="line"> * 例</span><br><span class="line"> * class A&#123;</span><br><span class="line"> *      public function a1()&#123;&#125;</span><br><span class="line"> *      public function a2()&#123;&#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> * class B extends A&#123;</span><br><span class="line"> *      public function b1()&#123;&#125;</span><br><span class="line"> *      public function a1()&#123;&#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> * getMethods('B')返回方法名b1和a1，a2虽然被B继承了，但未重写，故不返回</span><br><span class="line"> * <span class="doctag">@param</span> string $classname 类名</span><br><span class="line"> * <span class="doctag">@param</span> string $access public or protected  or private or final 方法的访问权限</span><br><span class="line"> * <span class="doctag">@return</span> array(methodname=&gt;access)  or array(methodname) 返回数组，如果第二个参数有效，</span><br><span class="line">     * 则返回以方法名为key，访问权限为value的数组</span><br><span class="line"> * <span class="doctag">@see</span>  使用了命名空间，故在new 时类前加反斜线；如果此此函数不是作为类中方法使用，可能由于权限问题，</span><br><span class="line">     *   只能获得public方法</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getMethods</span><span class="params">($classname,$access=null)</span></span>&#123;</span><br><span class="line">    $class = <span class="keyword">new</span> \ReflectionClass($classname);</span><br><span class="line">    $methods = $class-&gt;getMethods();</span><br><span class="line">    $returnArr = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">foreach</span>($methods <span class="keyword">as</span> $value)&#123;</span><br><span class="line">        <span class="keyword">if</span>($value-&gt;class == $classname)&#123;</span><br><span class="line">            <span class="keyword">if</span>($access != <span class="keyword">null</span>)&#123;</span><br><span class="line">                $methodAccess = <span class="keyword">new</span> \ReflectionMethod($classname,$value-&gt;name);</span><br><span class="line">                <span class="keyword">switch</span>($access)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'public'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isPublic())$returnArr[$value-&gt;name] = <span class="string">'public'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'protected'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isProtected())$returnArr[$value-&gt;name] = <span class="string">'protected'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'private'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isPrivate())$returnArr[$value-&gt;name] = <span class="string">'private'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'final'</span>:</span><br><span class="line">                        <span class="keyword">if</span>($methodAccess-&gt;isFinal())$returnArr[$value-&gt;name] = <span class="string">'final'</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                array_push($returnArr,$value-&gt;name);</span><br><span class="line">            &#125;</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $returnArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Sublime-Text-快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/29/Sublime-Text-快捷键/" class="article-date">
+  	<time datetime="2016-03-29T03:02:24.000Z" itemprop="datePublished">2016-03-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/29/Sublime-Text-快捷键/">Sublime Text 快捷键</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><ul>
+<li>选择一个选中项的下一个匹配项 <code>ctrl+d</code></li>
+<li>选择一个选中项的所有匹配项 <code>alt+f3</code></li>
+<li>选择与光标关联的开始和结束标签 <code>ctrl+shift+’</code></li>
+<li>选择容器内内容（新） <code>ctrl+shift+a</code></li>
+<li>选择括号内的内容 <code>ctrl+shift+m</code></li>
+</ul>
+</li>
+<li><h2 id="移动行和文本"><a href="#移动行和文本" class="headerlink" title="移动行和文本"></a>移动行和文本</h2><ul>
+<li>上移或下移行 <code>ctrl+shift+↑ 或 ↓</code></li>
+<li>复制行或选中项 <code>ctrl+shift+d</code></li>
+<li>增加和减少缩进 <code>ctrl+[ 或 ]</code></li>
+</ul>
+</li>
+<li><h2 id="剪切和删除，复制和粘贴"><a href="#剪切和删除，复制和粘贴" class="headerlink" title="剪切和删除，复制和粘贴"></a>剪切和删除，复制和粘贴</h2><ul>
+<li>剪切行或选中项 <code>ctrl+x</code></li>
+<li>粘贴并保持缩进 <code>ctrl+shift+v</code></li>
+<li>用标签包裹行或选中项 <code>alt+shift+w</code></li>
+<li>移除未闭合的容器元素 <code>ctrl+shift+;</code></li>
+</ul>
+</li>
+<li><h2 id="文本和数字操作"><a href="#文本和数字操作" class="headerlink" title="文本和数字操作"></a>文本和数字操作</h2><ul>
+<li>计算数学表达式 <code>ctrl+shift+y</code></li>
+<li>递增和递减 <code>alt+shift+↑ 或 ↓</code>，<code>ctrl+ ↑ 或 ↓</code></li>
+<li>大写和小写 <code>ctrl+k+u,ctrl+k+l</code></li>
+</ul>
+</li>
+<li><h2 id="注释和对齐变量"><a href="#注释和对齐变量" class="headerlink" title="注释和对齐变量"></a>注释和对齐变量</h2><ul>
+<li>注释选中项/行 <code>ctrl+/</code></li>
+<li>AlignTab自定义快捷键 <code>ctrl+alt+a</code>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷键/">快捷键</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/29/Sublime-Text-快捷键/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-地址栏插入js标签代码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
