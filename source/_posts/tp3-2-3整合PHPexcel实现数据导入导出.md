@@ -212,4 +212,4 @@ $objPHPExcel->getActiveSheet()->setCellValue('D1', ' ' . 123456789033);
 ### 参考
 [THINKPHP3.2.3整合PHPexcel实现数据的导入导出（含数据库）](http://www.gouguoyin.cn/php/4.html)
 [PHPExcel 长数字串显示为科学计数的解决方法](http://www.gouguoyin.cn/php/83.html)
-[百度云参考代码](http://pan.baidu.com/s/1pLs31wv) qqia
+[百度云参考代码](http://pan.baidu.com/s/1pLs31wv "THINKPHP3.2.3整合PHPexcel实现数据的导入导出.7z") qqia

@@ -17,3 +17,6 @@ function print_stack_trace() {
     return $html;
 }
 ```
+
+### 参考
+[PHP 打印调用函数入口地址(堆栈)](http://www.cnblogs.com/ggjucheng/p/3348555.html)

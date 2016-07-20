@@ -13,3 +13,6 @@ tags:
 ``` bash
     git update-index --no-assume-unchanged filePath
 ```
+
+### 参考
+[git忽略已经被提交的文件](https://segmentfault.com/q/1010000000430426)
