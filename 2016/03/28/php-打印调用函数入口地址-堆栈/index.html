@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/28/php-打印调用函数入口地址-堆栈/index.html">
 <meta property="og:site_name" content="Home Away From Home">
 <meta property="og:description" content="堆栈调试123456789function print_stack_trace() &amp;#123;    $array =debug_backtrace();    //print_r($array);//信息很齐全    unset($array[0]);    foreach($array as $row) &amp;#123;       $html .=$row[&apos;file&apos;].&apos;:&apos;.$row[&apos;">
-<meta property="og:updated_time" content="2016-05-05T22:44:59.929Z">
+<meta property="og:updated_time" content="2016-07-20T06:42:59.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php 打印调用函数入口地址(堆栈)">
 <meta name="twitter:description" content="堆栈调试123456789function print_stack_trace() &amp;#123;    $array =debug_backtrace();    //print_r($array);//信息很齐全    unset($array[0]);    foreach($array as $row) &amp;#123;       $html .=$row[&apos;file&apos;].&apos;:&apos;.$row[&apos;">
@@ -159,6 +159,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="堆栈调试"><a href="#堆栈调试" class="headerlink" title="堆栈调试"></a>堆栈调试</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_stack_trace</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $array =debug_backtrace();</span><br><span class="line">    <span class="comment">//print_r($array);//信息很齐全</span></span><br><span class="line">    <span class="keyword">unset</span>($array[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">foreach</span>($array <span class="keyword">as</span> $row) &#123;</span><br><span class="line">       $html .=$row[<span class="string">'file'</span>].<span class="string">':'</span>.$row[<span class="string">'line'</span>].<span class="string">'行,调用方法:'</span>.$row[<span class="string">'function'</span>].<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.cnblogs.com/ggjucheng/p/3348555.html" target="_blank" rel="external">PHP 打印调用函数入口地址(堆栈)</a></p>
+
       
     </div>
     

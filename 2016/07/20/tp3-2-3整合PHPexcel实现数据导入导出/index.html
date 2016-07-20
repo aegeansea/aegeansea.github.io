@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/20/tp3-2-3整合PHPexcel实现数据导入导出/index.html">
 <meta property="og:site_name" content="Home Away From Home">
 <meta property="og:description" content="一. 引入PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。">
-<meta property="og:updated_time" content="2016-07-20T06:10:03.369Z">
+<meta property="og:updated_time" content="2016-07-20T07:18:24.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tp3.2.3整合PHPexcel实现数据导入导出">
 <meta name="twitter:description" content="一. 引入PHPExcel文件夹和PHPExcel.class.php放入thinkphp的Library/Org/Util/目录下。">
@@ -166,7 +166,7 @@
 <p>更多的格式可以在PHPExcel/Style/NumberFormat.php中找到。注意：上述的设置对长数字字符串还是以文本方式来显示科学计数法的结果，原因可能php在处理大数字时采用的科学计数法<br>2、在设置值的时候显示的指定数据类型<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(<span class="string">'Simple'</span>);</span><br><span class="line"></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValueExplicit(<span class="string">'D1'</span>,</span><br><span class="line">                                 <span class="number">123456789033</span>, </span><br><span class="line">                                 PHPExcel_Cell_DataType::TYPE_STRING);</span><br></pre></td></tr></table></figure></p>
 <p>3、在数字字符串前加一个空格使之成为字符串<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br><span class="line">$objPHPExcel-&gt;setActiveSheetIndex(<span class="number">0</span>);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(<span class="string">'Simple'</span>);</span><br><span class="line"></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(<span class="string">'D1'</span>, <span class="string">' '</span> . <span class="number">123456789033</span>);</span><br></pre></td></tr></table></figure></p>
 <p>推荐使用第二、三种，第一种没有根本解决问题。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.gouguoyin.cn/php/4.html" target="_blank" rel="external">THINKPHP3.2.3整合PHPexcel实现数据的导入导出（含数据库）</a><br><a href="http://www.gouguoyin.cn/php/83.html" target="_blank" rel="external">PHPExcel 长数字串显示为科学计数的解决方法</a><br><a href="http://pan.baidu.com/s/1pLs31wv" target="_blank" rel="external">百度云参考代码</a> qqia</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.gouguoyin.cn/php/4.html" target="_blank" rel="external">THINKPHP3.2.3整合PHPexcel实现数据的导入导出（含数据库）</a><br><a href="http://www.gouguoyin.cn/php/83.html" target="_blank" rel="external">PHPExcel 长数字串显示为科学计数的解决方法</a><br><a href="http://pan.baidu.com/s/1pLs31wv" title="THINKPHP3.2.3整合PHPexcel实现数据的导入导出.7z" target="_blank" rel="external">百度云参考代码</a> qqia</p>
 
       
     </div>

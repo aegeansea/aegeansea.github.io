@@ -122,6 +122,307 @@
 
       <div class="body-wrap">
   
+    <article id="post-linux查找并移动目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/15/linux查找并移动目录/" class="article-date">
+  	<time datetime="2016-06-15T06:45:33.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/15/linux查找并移动目录/">linux查找并移动目录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>find . -regex &quot;./[0-9]+&quot; | xargs -i mv {} 新的目录</code></p>
+<p>你进到该文件夹, 执行上面命令, 就会把 所有的数字 目录 移动到了”新的目录”中</p>
+<p>当然, 上面的指令 会在当前目录下 查找 所有的 以数字 为名字的目录, 包括那些在 非数字目录里, 如果是以 数字命名的话, 也会移动.</p>
+<p>如果只想移动 当前第一层目录 中的 数字目录 , 执行下面的命令<br><code>find . -maxdepth 1 -regex &quot;./[0-9]+&quot; | xargs -i mv {} 新的目录</code></p>
+<p><code>find . -maxdepth 1 -regex &quot;./[0-9]+&quot; | xargs -i mv {} /Public/</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/查找/">查找</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动/">移动</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-npm模块集合" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/14/npm模块集合/" class="article-date">
+  	<time datetime="2016-06-14T14:34:52.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/npm模块集合/">npm模块集合</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、删除文件夹-适用于目录过深"><a href="#一、删除文件夹-适用于目录过深" class="headerlink" title="一、删除文件夹(适用于目录过深)"></a>一、删除文件夹(适用于目录过深)</h3><p>npm里面一个专门用于删除的模块插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g rimraf</span><br><span class="line"><span class="built_in">cd</span> xxx[include node_modules folder]</span><br><span class="line">rimraf nod_modules</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块集合/">模块集合</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-GitHub-Pages-Hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/14/GitHub-Pages-Hexo搭建博客/" class="article-date">
+  	<time datetime="2016-06-14T13:16:54.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/GitHub-Pages-Hexo搭建博客/">GitHub Pages + Hexo搭建博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。</p>
+<p>作为一个前端小白，虽说是个码农，但是一开始照着网上的各种教程去搭建的时候，还是云里雾里的。记得几个月前刚接触GitHub（哈哈，对大四来说确实有点晚），对版本控制一点概念都没有，更别说使用GitHub Page能做出一个好看又好用的博客了。所以第一次的尝试失败了。</p>
+<p>后来的两三个月里，开始逐渐地把日常的学习都迁移到GitHub上进行，慢慢熟悉了Git的版本控制。之后，因为嫌弃csdn和博客园的样子（颜值控），最终又回归到搭建独立博客的光明大道上。</p>
+<p>我所总结的是单纯地利用GitHub Pages搭建自己独立博客的过程，并没有额外使用独立域名之类的（谁让我现在还没工资 o(^▽^)o ）。</p>
+<h2 id="日常提交"><a href="#日常提交" class="headerlink" title="日常提交:"></a>日常提交:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . &amp;&amp; git commit -m <span class="string">"20160614224032"</span> &amp;&amp; git push origin hexo &amp;&amp; hexo g <span class="_">-d</span> ;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Page/">GitHub Page</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/静态独立博客/">静态独立博客</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/14/GitHub-Pages-Hexo搭建博客/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-sublime-text-3-注册码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/14/sublime-text-3-注册码/" class="article-date">
+  	<time datetime="2016-06-14T12:46:58.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/sublime-text-3-注册码/">sublime text 3 注册码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>—– BEGIN LICENSE —–<br>Michael Barnes<br>Single User License<br>EA7E-821385<br>8A353C41 872A0D5C DF9B2950 AFF6F667<br>C458EA6D 8EA3C286 98D1D650 131A97AB<br>AA919AEC EF20E143 B361B1E7 4C8B7F04<br>B085E65E 2F5F5360 8489D422 FB8FC1AA<br>93F6323C FD7F7544 3F39C318 D95E6480<br>FCCC7561 8A4A1741 68FA4223 ADCEDE07<br>200C25BE DBBC4855 C4CFB774 C5EC138C<br>0FEC1CEF D9DCECEC D3A5DAD1 01316C36<br>—— END LICENSE ——</p>
+<p>—– BEGIN LICENSE —–<br>Alexey Plutalov<br>Single User License<br>EA7E-860776<br>3DC19CC1 134CDF23 504DC871 2DE5CE55<br>585DC8A6 253BB0D9 637C87A2 D8D0BA85<br>AAE574AD BA7D6DA9 2B9773F2 324C5DEF<br>17830A4E FBCF9D1D 182406E9 F883EA87<br>E585BBA1 2538C270 E2E857C2 194283CA<br>7234FF9E D0392F93 1D16E021 F1914917<br>63909E12 203C0169 3F08FFC8 86D06EA8<br>73DDAEF0 AC559F30 A6A67947 B60104C6<br>—— END LICENSE ——</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注册码/">注册码</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-多个jQuery版本共存的处理方案" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/06/多个jQuery版本共存的处理方案/" class="article-date">
+  	<time datetime="2016-05-05T22:57:27.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/多个jQuery版本共存的处理方案/">多个jQuery版本共存的处理方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.5.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.11.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">   <span class="comment">// 现在window.$和window.jQuery是1.11版本:</span></span><br><span class="line">   <span class="built_in">console</span>.log($().jquery); <span class="comment">// =&gt; '1.11.0'</span></span><br><span class="line">   <span class="keyword">var</span> $jq = jQuery.noConflict(<span class="literal">true</span>);</span><br><span class="line">   <span class="comment">// 现在window.$和window.jQuery被恢复成1.5版本:</span></span><br><span class="line">   <span class="built_in">console</span>.log($().jquery); <span class="comment">// =&gt; '1.5.0'</span></span><br><span class="line">   <span class="comment">// 可以通过$jq访问1.11版本的jQuery了</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"myscript.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在myscript.js中，用$jq就可以访问1.11版本的jQuery了。</p>
+<p>推荐在脚本内部自带闭包方式的jQuery，使用<code>var $jq = $.noConflict(true);</code>将jQuery导出到局部变量使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// myscript.js</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// BEGIN</span></span><br><span class="line">   <span class="comment">/*! jQuery v1.11.1 */</span></span><br><span class="line">   !<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="string">"object"</span>==<span class="keyword">typeof</span> <span class="built_in">module</span>&amp;&amp;<span class="string">"object"</span>==<span class="keyword">typeof</span> <span class="built_in">module</span>.exports?...</span><br><span class="line">   if(k&amp;&amp;j[k]&amp;&amp;(e||j[k].data)||<span class="keyword">void</span> <span class="number">0</span>!==d||<span class="string">"string"</span>!=<span class="keyword">typeof</span> b)<span class="keyword">return</span> k||(k=...</span><br><span class="line">   &#125;,cur:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> a=Zb.propHooks[<span class="keyword">this</span>.prop];<span class="keyword">return</span> a&amp;&amp;a.get?a.get(thi...</span><br><span class="line">   var $ = jQuery.noConflict(<span class="literal">true</span>);</span><br><span class="line">   <span class="comment">// <span class="doctag">TODO:</span> javascript code here...</span></span><br><span class="line">   <span class="comment">// END</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>注意到$是一个局部变量，在后面的代码中，可以随时引用这个$，跟页面上其他版本的jQuery全局变量$不是一个对象。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/共存/">共存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多版本/">多版本</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-php-获取只在本类中定义的方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -355,6 +656,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="堆栈调试"><a href="#堆栈调试" class="headerlink" title="堆栈调试"></a>堆栈调试</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_stack_trace</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $array =debug_backtrace();</span><br><span class="line">    <span class="comment">//print_r($array);//信息很齐全</span></span><br><span class="line">    <span class="keyword">unset</span>($array[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">foreach</span>($array <span class="keyword">as</span> $row) &#123;</span><br><span class="line">       $html .=$row[<span class="string">'file'</span>].<span class="string">':'</span>.$row[<span class="string">'line'</span>].<span class="string">'行,调用方法:'</span>.$row[<span class="string">'function'</span>].<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.cnblogs.com/ggjucheng/p/3348555.html" target="_blank" rel="external">PHP 打印调用函数入口地址(堆栈)</a></p>
+
       
     </div>
     
@@ -445,66 +748,9 @@
 
 
   
-    <article id="post-git不追踪已经在版本库中的文件修改" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/23/git不追踪已经在版本库中的文件修改/" class="article-date">
-  	<time datetime="2016-03-23T01:09:33.000Z" itemprop="datePublished">2016-03-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/23/git不追踪已经在版本库中的文件修改/">git不追踪已经在版本库中的文件修改</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="取消追踪命令"><a href="#取消追踪命令" class="headerlink" title="取消追踪命令"></a>取消追踪命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-index --assume-unchanged filePath</span><br></pre></td></tr></table></figure>
-<h3 id="还原追踪命令"><a href="#还原追踪命令" class="headerlink" title="还原追踪命令"></a>还原追踪命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-index --no-assume-unchanged filePath</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
