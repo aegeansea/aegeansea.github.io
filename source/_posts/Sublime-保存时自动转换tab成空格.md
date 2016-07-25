@@ -4,7 +4,7 @@ date: 2016-07-20 15:17:04
 tags: [自动转换]
 ---
 每次保存前手动转换实在太烦人，下面这个脚本可以帮到你。
-
+<!-- more -->
 1. 打开sublime的Preference -> Browser Packages ...
 
 2. 新建一个目录ExpandTabsOnSave
