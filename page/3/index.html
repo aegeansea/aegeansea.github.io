@@ -122,6 +122,64 @@
 
       <div class="body-wrap">
   
+    <article id="post-php-打印调用函数入口地址-堆栈" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/28/php-打印调用函数入口地址-堆栈/" class="article-date">
+  	<time datetime="2016-03-28T06:30:21.000Z" itemprop="datePublished">2016-03-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/28/php-打印调用函数入口地址-堆栈/">php 打印调用函数入口地址(堆栈)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="堆栈调试"><a href="#堆栈调试" class="headerlink" title="堆栈调试"></a>堆栈调试</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_stack_trace</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $array =debug_backtrace();</span><br><span class="line">    <span class="comment">//print_r($array);//信息很齐全</span></span><br><span class="line">    <span class="keyword">unset</span>($array[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">foreach</span>($array <span class="keyword">as</span> $row) &#123;</span><br><span class="line">       $html .=$row[<span class="string">'file'</span>].<span class="string">':'</span>.$row[<span class="string">'line'</span>].<span class="string">'行,调用方法:'</span>.$row[<span class="string">'function'</span>].<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.cnblogs.com/ggjucheng/p/3348555.html" target="_blank" rel="external">PHP 打印调用函数入口地址(堆栈)</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-多个github帐号的SSH-key切换" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

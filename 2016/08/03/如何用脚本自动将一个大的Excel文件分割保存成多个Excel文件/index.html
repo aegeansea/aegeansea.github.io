@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="将一个Execl按行数拆分为不同的excel文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件">
+<meta property="og:url" content="http://yoursite.com/2016/08/03/如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="将一个Execl按行数拆分为不同的excel文件">
+<meta property="og:updated_time" content="2016-08-03T05:36:24.734Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件">
+<meta name="twitter:description" content="将一个Execl按行数拆分为不同的excel文件">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/03/如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件/" class="article-date">
+  	<time datetime="2016-08-03T05:30:15.000Z" itemprop="datePublished">2016-08-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何用脚本自动将一个大的Excel文件分割保存成多个Excel文件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/execl/">execl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拆分/">拆分</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将一个Execl按行数拆分为不同的excel文件<br><a id="more"></a></p>
+<ol>
+<li>打开office excel,在sheet表标签上右键 -&gt; 查看代码</li>
+<li><p>将以下代码复制进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"> Function RowSplit(SourceFileName, DestFileName)</span><br><span class="line">&apos; 功能描述：将数据行数过多的Excel文件分割成多个Excel文件</span><br><span class="line">&apos; 输入：源文件名，目的文件名</span><br><span class="line">&apos; 输出：返回分割是否完全成功，以及分割成功的文件</span><br><span class="line">&apos; 创建人：斯文兔</span><br><span class="line">&apos; 创建时间： 2005-1-6</span><br><span class="line">&apos; 最后修改时间：2005-1-6</span><br><span class="line"></span><br><span class="line">Dim intSourceIndex</span><br><span class="line">Dim intSourceRowNO</span><br><span class="line">Dim ForNumber</span><br><span class="line">Dim intDestIndex</span><br><span class="line">Dim xlApp</span><br><span class="line">Const intSplitNO = 1000 &apos;分割行数</span><br><span class="line"></span><br><span class="line"> &apos;创建Excel对象</span><br><span class="line"> Set xlApp = CreateObject(&quot;EXCEL.APPLICATION&quot;)</span><br><span class="line"></span><br><span class="line"> &apos;打开选择的Excel文件</span><br><span class="line">    xlApp.Workbooks.Open SourceFileName</span><br><span class="line">    intSourceIndex = xlApp.Workbooks.Count</span><br><span class="line">    xlApp.Workbooks(intSourceIndex).Sheets(1).Select</span><br><span class="line"></span><br><span class="line"> &apos;获得数据行数</span><br><span class="line"> intSourceRowNO = xlApp.ActiveSheet.UsedRange.Rows.Count</span><br><span class="line"></span><br><span class="line">    &apos;计算循环次数</span><br><span class="line">    If (intSourceRowNO - 1) / intSplitNO = (intSourceRowNO - 1) \ intSplitNO Then</span><br><span class="line">        ForNumber = (intSourceRowNO - 1) \ intSplitNO</span><br><span class="line">    Else</span><br><span class="line">        ForNumber = (intSourceRowNO - 1) \ intSplitNO + 1</span><br><span class="line">    End If</span><br><span class="line"></span><br><span class="line">    &apos;判断是否需要分割</span><br><span class="line"> If ForNumber &lt; 2 Then</span><br><span class="line">        RowSplit = False</span><br><span class="line">        Exit Function</span><br><span class="line">    End If</span><br><span class="line"></span><br><span class="line">    MsgBox &quot;数据量大于&quot; &amp; intSplitNO * 2 &amp; &quot;行，按 &quot; &amp; intSplitNO &amp; &quot;行一个文件进行分割&quot;</span><br><span class="line"></span><br><span class="line"> &apos;开始分割</span><br><span class="line">    For i = 1 To ForNumber</span><br><span class="line">  &apos;复制表头</span><br><span class="line">        xlApp.Rows(&quot;1:1&quot;).Select</span><br><span class="line">        xlApp.Selection.Copy</span><br><span class="line">        xlApp.Workbooks.Add</span><br><span class="line">        intDestIndex = xlApp.Workbooks.Count</span><br><span class="line">        xlApp.Range(&quot;A1&quot;).Select</span><br><span class="line">        xlApp.ActiveSheet.Paste</span><br><span class="line">  &apos;复制数据</span><br><span class="line">  xlApp.Workbooks(intSourceIndex).Activate</span><br><span class="line">        xlApp.Rows((i - 1) * intSplitNO + 2 &amp; &quot;:&quot; &amp; i * intSplitNO + 1).Select</span><br><span class="line">        xlApp.Selection.Copy</span><br><span class="line">        xlApp.Workbooks(intDestIndex).Activate</span><br><span class="line">        xlApp.Range(&quot;A2&quot;).Select</span><br><span class="line">        xlApp.ActiveSheet.Paste</span><br><span class="line">  &apos;关闭Excel的自动提示</span><br><span class="line">        xlApp.DisplayAlerts = False</span><br><span class="line">  &apos;删除新建文件形成的两个空Sheet</span><br><span class="line">        xlApp.Workbooks(intDestIndex).Sheets(2).Delete</span><br><span class="line">        xlApp.Workbooks(intDestIndex).Sheets(2).Delete</span><br><span class="line">  &apos;打开Excel的自动提示</span><br><span class="line">        xlApp.DisplayAlerts = True</span><br><span class="line">        xlApp.Range(&quot;A1&quot;).Select</span><br><span class="line">  &apos;保存数据</span><br><span class="line">        xlApp.ActiveWorkbook.SaveAs Left(DestFileName, Len(DestFileName) - 4) &amp; i &amp; Right(DestFileName, 4)</span><br><span class="line">  &apos;关闭保存好的文件</span><br><span class="line">        xlApp.ActiveWindow.Close</span><br><span class="line">    Next</span><br><span class="line"> &apos;关闭源文件</span><br><span class="line">    xlApp.Workbooks(intSourceIndex).Close</span><br><span class="line"></span><br><span class="line"> &apos;关闭并清除Excel对象</span><br><span class="line"> xlApp.Quit</span><br><span class="line"> Set xlApp = Nothing</span><br><span class="line"></span><br><span class="line">    &apos;返回执行成功</span><br><span class="line"> RowSplit = True</span><br><span class="line"></span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Sub SplitAll()</span><br><span class="line">    Dim strSourceFilename</span><br><span class="line">    Dim strDestFilename</span><br><span class="line"></span><br><span class="line">    &apos;创建Excel对象</span><br><span class="line"> Set xlApp = CreateObject(&quot;EXCEL.APPLICATION&quot;)</span><br><span class="line"></span><br><span class="line"> &apos;选择要分割的文件</span><br><span class="line"> strSourceFilename = xlApp.GetOpenFilename</span><br><span class="line">    strDestFilename = strSourceFilename</span><br><span class="line">&apos;    strDestFilename = xlApp.GetSaveAsFilename</span><br><span class="line"></span><br><span class="line">    &apos;如果选择了文件，则开始做分割</span><br><span class="line"> If strSourceFilename &lt;&gt; &quot;False&quot; And strDestFilename &lt;&gt; &quot;False&quot; Then</span><br><span class="line">        If RowSplit(strSourceFilename, strDestFilename) Then</span><br><span class="line">   MsgBox &quot;文件分割成功&quot;</span><br><span class="line">  Else</span><br><span class="line">   MsgBox &quot;文件分割失败&quot;</span><br><span class="line">  End If</span><br><span class="line">    End If</span><br><span class="line"> &apos;关闭并清除Excel对象</span><br><span class="line"> xlApp.Quit</span><br><span class="line"> Set xlApp = Nothing</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>F5运行代码,选择要操作的文件,之后按提示操作</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/25/PHP安全的URL字符串base64编码和解码函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP安全的URL字符串base64编码和解码函数</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
