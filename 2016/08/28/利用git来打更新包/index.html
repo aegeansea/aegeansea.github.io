@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: git | Home Away From Home</title>
+  <title>利用git来打更新包 | Home Away From Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Happy U Like This">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home Away From Home">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="12git archive -o update.zip NEW_COMMIT_ID_HERE $(git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE);git archive -o update.zip 4d5baf6 $(git diff –name-only 438eac0 4d5baf6);
+OLD_COMMIT_ID_HERE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用git来打更新包">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/利用git来打更新包/index.html">
 <meta property="og:site_name" content="Home Away From Home">
-<meta property="og:description" content="Happy U Like This">
+<meta property="og:description" content="12git archive -o update.zip NEW_COMMIT_ID_HERE $(git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE);git archive -o update.zip 4d5baf6 $(git diff –name-only 438eac0 4d5baf6);
+OLD_COMMIT_ID_HERE">
+<meta property="og:updated_time" content="2016-08-28T09:54:01.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Home Away From Home">
-<meta name="twitter:description" content="Happy U Like This">
+<meta name="twitter:title" content="利用git来打更新包">
+<meta name="twitter:description" content="12git archive -o update.zip NEW_COMMIT_ID_HERE $(git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE);git archive -o update.zip 4d5baf6 $(git diff –name-only 438eac0 4d5baf6);
+OLD_COMMIT_ID_HERE">
   
     <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
   
@@ -120,115 +124,82 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-利用git来打更新包" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/28/利用git来打更新包/" class="archive-article-date">
-  	<time datetime="2016-08-28T09:48:08.000Z" itemprop="datePublished">Aug 28</time>
+    <div class="article-meta">
+      <a href="/2016/08/28/利用git来打更新包/" class="article-date">
+  	<time datetime="2016-08-28T09:48:08.000Z" itemprop="datePublished">2016-08-28</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/28/利用git来打更新包/">利用git来打更新包</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用git来打更新包
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/打包/">打包</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git archive -o update.zip NEW_COMMIT_ID_HERE $(git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE);</span><br><span class="line">git archive -o update.zip 4d5baf6 $(git diff –name-only 438eac0 4d5baf6);</span><br></pre></td></tr></table></figure>
+<p>OLD_COMMIT_ID_HERE仅作为打包的起始点，但并不包含OLD_COMMIT_ID_HERE提交的内容。</p>
+<p>当然NEW_COMMIT_ID_HERE 和OLD_COMMIT_ID_HERE之间可以间隔多个COMMIT的，这样就会打多个COMMIT的内容打包到一个压缩包内。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.58maisui.com/2016/08/28/206/" target="_blank" rel="external">利用git来打更新包</a></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/28/PHP中include-require-include-once-require-once使用总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          PHP中include/require/include_once/require_once使用总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/22/php项目框架替换前提-解决常量重名/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php项目框架替换前提-解决常量重名</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/24/多个github帐号的SSH-key切换/" class="archive-article-date">
-  	<time datetime="2016-03-24T00:59:41.000Z" itemprop="datePublished">Mar 24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/24/多个github帐号的SSH-key切换/">多个github帐号的SSH key切换</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH-key/">SSH key</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/23/git不追踪已经在版本库中的文件修改/" class="archive-article-date">
-  	<time datetime="2016-03-23T01:09:33.000Z" itemprop="datePublished">Mar 23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/23/git不追踪已经在版本库中的文件修改/">git不追踪已经在版本库中的文件修改</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -254,9 +225,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

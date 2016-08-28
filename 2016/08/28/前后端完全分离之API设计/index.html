@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前后端完全分离之API设计 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景API就是开发者使用的界面。我的目标不仅是能用，而且好用, 跨平台(PC, Android, IOS, etc…)使用; 本文将详细介绍API的设计及异常处理, 并将异常信息进行封装友好地反馈给前端.
+前后端完全分离后, 前端和后端如何交互?
+答: 通过双方协商好的API.
+接下来我分享我自己设计的API接口, 欢迎各位朋友指教.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端完全分离之API设计">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/前后端完全分离之API设计/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="背景API就是开发者使用的界面。我的目标不仅是能用，而且好用, 跨平台(PC, Android, IOS, etc…)使用; 本文将详细介绍API的设计及异常处理, 并将异常信息进行封装友好地反馈给前端.
+前后端完全分离后, 前端和后端如何交互?
+答: 通过双方协商好的API.
+接下来我分享我自己设计的API接口, 欢迎各位朋友指教.">
+<meta property="og:updated_time" content="2016-08-28T11:17:18.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前后端完全分离之API设计">
+<meta name="twitter:description" content="背景API就是开发者使用的界面。我的目标不仅是能用，而且好用, 跨平台(PC, Android, IOS, etc…)使用; 本文将详细介绍API的设计及异常处理, 并将异常信息进行封装友好地反馈给前端.
+前后端完全分离后, 前端和后端如何交互?
+答: 通过双方协商好的API.
+接下来我分享我自己设计的API接口, 欢迎各位朋友指教.">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-前后端完全分离之API设计" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/前后端完全分离之API设计/" class="article-date">
+  	<time datetime="2016-08-28T11:07:12.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前后端完全分离之API设计
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前后端分离/">前后端分离</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>API就是开发者使用的界面。我的目标不仅是能用，而且好用, 跨平台(PC, Android, IOS, etc…)使用; 本文将详细介绍API的设计及异常处理, 并将异常信息进行封装友好地反馈给前端.</p>
+<p>前后端完全分离后, 前端和后端如何交互?</p>
+<p>答: 通过双方协商好的API.</p>
+<p>接下来我分享我自己设计的API接口, 欢迎各位朋友指教.<br><a id="more"></a></p>
+<h3 id="API设计理念"><a href="#API设计理念" class="headerlink" title="API设计理念"></a>API设计理念</h3><ol>
+<li>将涉及的实体抽象成资源, 即按<code>id</code>访问资源, 在<code>url</code>上做文章, 以后再也不用为<code>url</code>起名字而苦恼了.</li>
+<li>使用<code>HTTP</code>动词对资源进行<code>CRUD</code>(增删改查); get-&gt;查, post-&gt;增, put-&gt;改, delete-&gt;删.</li>
+<li>URL命名规则, 对于资源无法使用一个单数名词表示的情况, 我使用中横线(`-``)连接.<ul>
+<li>资源采用名词命名, e.g: 产品 -&gt; product</li>
+<li>新增资源, e.g: 新增产品, url -&gt; /product , verb -&gt; POST</li>
+<li>修改资源, e.g: 修改产品, url -&gt; /products/{id} , verb -&gt; PUT</li>
+<li>资源详情, e.g: 指定产品详情, url -&gt; /products/{id} , verb -&gt; GET</li>
+<li>删除资源, e.g: 删除产品, url -&gt; /products/{id} , verb -&gt; DELETE</li>
+<li>资源列表, e.g: 产品列表, url -&gt; /products , verb -&gt; GET</li>
+<li>资源关联关系, e.g: 收藏产品, url -&gt; /products/{id}/star , verb -&gt; PUT</li>
+<li>资源关联关系, e.g: 删除收藏产品, url -&gt; /products/{id}/star , verb -&gt; DELETE</li>
+</ul>
+</li>
+</ol>
+<p>目前我API的设计只涉及这两点, 至于第三点<code>HATEOAS</code>(Hypermedia As The Engine Of Application State)那就由读者自己去选择了.</p>
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>本文中只涉及了设计的理念, 具体的实现请下载源码<a href="https://github.com/arccode/rest-api" target="_blank" rel="external">rest-api</a>, 项目内写了比较详细的注释.</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://arccode.net/2015/04/18/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%88%86%E7%A6%BB%E4%B9%8BAPI%E8%AE%BE%E8%AE%A1/" target="_blank" rel="external">前后端完全分离之API设计</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/28/前后端完全分离初探/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前后端完全分离初探</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

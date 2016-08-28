@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Linux下MySQL_5.5的修改字符集编码为UTF8 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景mysql安装后, 插入的数据位乱码, 经检查为默认字符集是latin1, 而程序使用UTF-8.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下MySQL_5.5的修改字符集编码为UTF8">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/Linux下MySQL-5-5的修改字符集编码为UTF8/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="背景mysql安装后, 插入的数据位乱码, 经检查为默认字符集是latin1, 而程序使用UTF-8.">
+<meta property="og:updated_time" content="2016-08-28T10:39:08.225Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下MySQL_5.5的修改字符集编码为UTF8">
+<meta name="twitter:description" content="背景mysql安装后, 插入的数据位乱码, 经检查为默认字符集是latin1, 而程序使用UTF-8.">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Linux下MySQL-5-5的修改字符集编码为UTF8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/Linux下MySQL-5-5的修改字符集编码为UTF8/" class="article-date">
+  	<time datetime="2016-08-28T10:28:43.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux下MySQL_5.5的修改字符集编码为UTF8
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf8/">utf8</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>mysql安装后, 插入的数据位乱码, 经检查为默认字符集是<code>latin1</code>, 而程序使用<code>UTF-8</code>.<br><a id="more"></a></p>
+<h3 id="检查字符集"><a href="#检查字符集" class="headerlink" title="检查字符集"></a>检查字符集</h3><p>1.使用ssh终端连接mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h 127.0.0.1 -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>2.查看字符集<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like <span class="string">'character%'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>显示如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_<span class="built_in">set</span>_client | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_connection | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_database | latin1 |</span><br><span class="line">| character_<span class="built_in">set</span>_filesystem | binary |</span><br><span class="line">| character_<span class="built_in">set</span>_results | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_server | latin1 |</span><br><span class="line">| character_<span class="built_in">set</span>_system | utf8 |</span><br><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure></p>
+<p><code>character_set_database</code>和<code>character_set_server</code>的默认字符集还是<code>latin1</code>.</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>修改mysql的<code>my.cnf</code>文件中的字符集键值, <code>my.cnf</code>一般位于<code>/etc</code>目录下, 没找到的话可以使用<code>find / -name my.cnf</code>查找.</p>
+<p>1.在[client]字段里加入default-character-set=utf8<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket = /var/lib/mysql/mysql.sock</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure></p>
+<p>2.在[mysqld]字段里加入character-set-server=utf8<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">port = 3306</span><br><span class="line">socket = /var/lib/mysql/mysql.sock</span><br><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure></p>
+<p>3.在[mysql]字段里加入default-character-set=utf8<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">no-auto-rehash</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure></p>
+<p>修改完成后，service mysql restart重启mysql服务就生效.</p>
+<p><em>注意</em>: [mysqld]字段与[mysql]字段是有区别的.</p>
+<p>4.再次查看字符集<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like <span class="string">'character%'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_<span class="built_in">set</span>_client | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_connection | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_database | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_filesystem | binary |</span><br><span class="line">| character_<span class="built_in">set</span>_results | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_server | utf8 |</span><br><span class="line">| character_<span class="built_in">set</span>_system | utf8 |</span><br><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure></p>
+<p>5.如果上面的都修改了还乱码,那剩下问题就一定在connection连接层上.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET NAMES <span class="string">'utf8'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>该语句相当于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SET character_<span class="built_in">set</span>_client = utf8;</span><br><span class="line">SET character_<span class="built_in">set</span>_results = utf8;</span><br><span class="line">SET character_<span class="built_in">set</span>_connection = utf8;</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://arccode.net/2015/07/07/Linux%E4%B8%8BMySQL-5-5%E7%9A%84%E4%BF%AE%E6%94%B9%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E4%B8%BAUTF8/#more" target="_blank" rel="external">Linux下MySQL_5.5的修改字符集编码为UTF8</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/28/前后端完全分离初探/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前后端完全分离初探
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/28/PHP中include-require-include-once-require-once使用总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP中include/require/include_once/require_once使用总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

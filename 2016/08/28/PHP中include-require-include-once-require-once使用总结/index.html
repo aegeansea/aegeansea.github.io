@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>PHP中include/require/include_once/require_once使用总结 | Home Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="include使用方法：1include &quot;test.php&quot;;
+一般是放在流程控制的处理部分中使用，将文件内容引入。PHP程序在遇到include语句时，才将它读进来，这种方式可以把程序执行时的流程简单化，便于复用代码！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP中include/require/include_once/require_once使用总结">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/PHP中include-require-include-once-require-once使用总结/index.html">
+<meta property="og:site_name" content="Home Away From Home">
+<meta property="og:description" content="include使用方法：1include &quot;test.php&quot;;
+一般是放在流程控制的处理部分中使用，将文件内容引入。PHP程序在遇到include语句时，才将它读进来，这种方式可以把程序执行时的流程简单化，便于复用代码！">
+<meta property="og:updated_time" content="2016-08-28T10:30:49.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP中include/require/include_once/require_once使用总结">
+<meta name="twitter:description" content="include使用方法：1include &quot;test.php&quot;;
+一般是放在流程控制的处理部分中使用，将文件内容引入。PHP程序在遇到include语句时，才将它读进来，这种方式可以把程序执行时的流程简单化，便于复用代码！">
+  
+    <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">mjs</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like This</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">mjs</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">mjs</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like This</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-PHP中include-require-include-once-require-once使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/PHP中include-require-include-once-require-once使用总结/" class="article-date">
+  	<time datetime="2016-08-28T10:03:57.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP中include/require/include_once/require_once使用总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/引用/">引用</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="include"><a href="#include" class="headerlink" title="include"></a>include</h3><p>使用方法：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> <span class="string">"test.php"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>一般是放在流程控制的处理部分中使用，将文件内容引入。PHP程序在遇到include语句时，才将它读进来，这种方式可以把程序执行时的流程简单化，便于复用代码！<br><a id="more"></a><br>include在引入不存文件时产生一个警告且脚本还会继续执行，执行时需要引用的文件每次都要进行读取和评估，且有返回值，比如：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">FALSE</span>) &#123; </span><br><span class="line">    <span class="keyword">include</span> <span class="string">'test.php'</span>; <span class="comment">// test.php不会被引入 </span></span><br><span class="line">&#125; </span><br><span class="line"> </span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">include</span> <span class="string">'test.php'</span>;<span class="comment">// 现在的条件是test.php不存在</span></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">'标哥的技术博客'</span>; <span class="comment">// 仍然执行下面的代码</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"> </span><br><span class="line">$ret = <span class="keyword">include</span> <span class="string">"QueryPhone.php"</span>;</span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>($ret)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"文件引入成功"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"文件引入失败"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="include-once"><a href="#include-once" class="headerlink" title="include_once"></a>include_once</h3><p>使用方法：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_once</span> <span class="string">"test.php"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>加了_once之后，表示文件已引入的将不再引入。include_once引入文件的时候，如果碰到错误会给出提示并继续运行下边的代码！</p>
+<p>他的使用方式与include差不多，不同的是include_once只引入一篇！</p>
+<h3 id="require"><a href="#require" class="headerlink" title="require"></a>require</h3><p>使用方法：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">"test.php"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>一般是放在PHP文件的最前面将文件内容引入，PHP会将require的文件内容先引入成为当前文件的一部分，然后才开始执行后面的代码。</p>
+<p>require在引入文件失败时会给出提示且脚本会被中断执行。比如：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件是不存在的</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">"QueryPhone.php"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"没有被打印"</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="require-once"><a href="#require-once" class="headerlink" title="require_once"></a>require_once</h3><p>使用方法：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require_once</span> <span class="string">"test.php"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>一般是放在PHP文件的最前面将文件内容引入，PHP会先将待引入的文件内容引入到本文件中，如果引入失败则不会继续往下执行；如果引入成功，则可正常执行下面的代码。</p>
+<p>它的使用方式与require差不多，不同的是require_once只会引入一次，如果之前已引入过，则不会再引入！</p>
+<h3 id="综合例子"><a href="#综合例子" class="headerlink" title="综合例子"></a>综合例子</h3><p>假设有一个文件中的a.php,里面只有一句echo “file name is a”;<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">'a.php'</span>;</span><br><span class="line"><span class="keyword">require</span> <span class="string">'a.php'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">include_once</span> <span class="string">'a.php'</span>;</span><br><span class="line"><span class="keyword">require_once</span> <span class="string">'a.php'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>那么上面这四个引入会打印多少行呢?其实只会打印前面两句代码执行的结果，因此只有两个：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file name is a</span><br><span class="line">file name is a</span><br></pre></td></tr></table></figure></p>
+<p>下面我们来交换一下前两行与后两行试试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"> </span><br><span class="line">include_once &apos;a.php&apos;;</span><br><span class="line">require_once &apos;a.php&apos;;</span><br><span class="line"> </span><br><span class="line">include &apos;a.php&apos;;</span><br><span class="line">require &apos;a.php&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>那么上面这四句会打印出多少行呢？自然是四行，因为前两行在此之前并没有引入过，因此会引入一次，而include/require虽然之前引入过，还会再引入，因此打印结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file name is a</span><br><span class="line">file name is a</span><br><span class="line">file name is a</span><br><span class="line">file name is a</span><br></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>从理论上说，include和require后面加不加括号对执行的结果并没有什么区别，但是加上括号效率相对会较低，所以通常后面能不加括号就不要添加括号了！</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.huangyibiao.com/archives/1429" target="_blank" rel="external">PHP中include/require/include_once/require_once使用总结</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/28/Linux下MySQL-5-5的修改字符集编码为UTF8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Linux下MySQL_5.5的修改字符集编码为UTF8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/28/利用git来打更新包/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用git来打更新包</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 mjs
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
