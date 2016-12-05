@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: mysql | Home Away From Home</title>
+  <title>mysql操作集合 | Home Away From Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Happy U Like This">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home Away From Home">
-<meta property="og:url" content="http://yoursite.com/tags/mysql/index.html">
+  <meta name="description" content="说明mysql相关不会或容易忘记的操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql操作集合">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/mysql操作集合/index.html">
 <meta property="og:site_name" content="Home Away From Home">
-<meta property="og:description" content="Happy U Like This">
+<meta property="og:description" content="说明mysql相关不会或容易忘记的操作">
+<meta property="og:updated_time" content="2016-12-05T01:06:36.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Home Away From Home">
-<meta name="twitter:description" content="Happy U Like This">
+<meta name="twitter:title" content="mysql操作集合">
+<meta name="twitter:description" content="说明mysql相关不会或容易忘记的操作">
   
     <link rel="alternative" href="/atom.xml" title="Home Away From Home" type="application/atom+xml">
   
@@ -120,84 +121,82 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-mysql操作集合" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/05/mysql操作集合/" class="archive-article-date">
-  	<time datetime="2016-12-05T00:56:44.000Z" itemprop="datePublished">Dec 5</time>
+    <div class="article-meta">
+      <a href="/2016/12/05/mysql操作集合/" class="article-date">
+  	<time datetime="2016-12-05T00:56:44.000Z" itemprop="datePublished">2016-12-05</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/05/mysql操作集合/">mysql操作集合</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql操作集合
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作/">操作</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>mysql相关不会或容易忘记的操作<br><a id="more"></a></p>
+<h3 id="链接从服务器"><a href="#链接从服务器" class="headerlink" title="链接从服务器"></a>链接从服务器</h3><p>1.不能只使用<code>-P</code>来指定端口，必须使用<code>.sock</code>来链接(原因不明)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -S /home/mysql2/mysql.sock -P 3308 -uroot -pmeidi</span><br></pre></td></tr></table></figure></p>
+<h3 id="链接从服务器-1"><a href="#链接从服务器-1" class="headerlink" title="链接从服务器"></a>链接从服务器</h3><p>1.不能只使用<code>-P</code>来指定端口，必须使用<code>.sock</code>来链接(原因不明)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">'root'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'mypassword'</span> WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.jb51.net/article/24508.htm" target="_blank" rel="external">MySQL数据库远程连接开启方法</a></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/05/composer操作集合/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          composer操作集合
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/28/前后端完全分离之API设计/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前后端完全分离之API设计</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/28/Linux下MySQL-5-5的修改字符集编码为UTF8/" class="archive-article-date">
-  	<time datetime="2016-08-28T10:28:43.000Z" itemprop="datePublished">Aug 28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/28/Linux下MySQL-5-5的修改字符集编码为UTF8/">Linux下MySQL_5.5的修改字符集编码为UTF8</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf8/">utf8</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 </div>
       <footer id="footer">
@@ -223,9 +222,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
