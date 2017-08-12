@@ -90,3 +90,23 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+qiniu:
+  offline: false
+  sync: true
+  bucket: blog
+  secret_file: sec/qn.json
+  access_key: AccessKey
+  secret_key: SecretKey
+  dirPrefix: static
+  urlPrefix: http://ouk3qgm0k.bkt.clouddn.com/static
+  up_host: http://upload.qiniu.com
+  local_dir: static
+  update_exist: true
+  image:
+    folder: images
+    extend:
+  js:
+    folder: js
+  css:
+    folder: css
