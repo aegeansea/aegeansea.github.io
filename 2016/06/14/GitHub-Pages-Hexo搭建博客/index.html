@@ -190,7 +190,7 @@
 <p>作为一个前端小白，虽说是个码农，但是一开始照着网上的各种教程去搭建的时候，还是云里雾里的。记得几个月前刚接触GitHub（哈哈，对大四来说确实有点晚），对版本控制一点概念都没有，更别说使用GitHub Page能做出一个好看又好用的博客了。所以第一次的尝试失败了。</p>
 <p>后来的两三个月里，开始逐渐地把日常的学习都迁移到GitHub上进行，慢慢熟悉了Git的版本控制。之后，因为嫌弃csdn和博客园的样子（颜值控），最终又回归到搭建独立博客的光明大道上。</p>
 <p>我所总结的是单纯地利用GitHub Pages搭建自己独立博客的过程，并没有额外使用独立域名之类的（谁让我现在还没工资 o(^▽^)o ）。</p>
-<h2 id="日常提交"><a href="#日常提交" class="headerlink" title="日常提交:"></a>日常提交:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . &amp;&amp; git commit -m <span class="string">"20160614224032"</span> &amp;&amp; git push origin hexo &amp;&amp; hexo g <span class="_">-d</span> ;</span><br></pre></td></tr></table></figure>
+<h2 id="日常提交"><a href="#日常提交" class="headerlink" title="日常提交:"></a>日常提交:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add . &amp;&amp; git commit -m <span class="string">"20160614224032"</span> &amp;&amp; git push origin hexo &amp;&amp; hexo g -d ;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>如果是小小白，可以先花时间去了解下：</p>
 <ul>
@@ -218,7 +218,7 @@
 <li><a href="https://desktop.github.com/" target="_blank" rel="external">GitHub for Windows</a></li>
 </ol>
 <h3 id="2-2-2-配置-Git"><a href="#2-2-2-配置-Git" class="headerlink" title="2.2.2 配置 Git"></a>2.2.2 配置 Git</h3><p>当安装完Git应该做的第一件事情就是设置用户名称和邮件地址。这样做很重要，因为每一个Git的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"username"</span></span><br><span class="line">$ git config --global user.email <span class="string">"username@example.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"username"</span></div><div class="line">$ git config --global user.email <span class="string">"username@example.com"</span></div></pre></td></tr></table></figure>
 <p>对于user.email，因为在GitHub的commits信息上是可见的，所以如果你不想让人知道你的email，可以Keeping your email address private:</p>
 <ol>
 <li>在GitHub右上方点击你的头像，选择”Settings”；</li>
@@ -226,7 +226,7 @@
 <li>选择”Keep my email address private”。</li>
 </ol>
 <p>这样，你就可以使用如下格式的email进行配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"username@users.noreply.github.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email <span class="string">"username@users.noreply.github.com"</span></div></pre></td></tr></table></figure>
 <h3 id="2-2-3-相关资料"><a href="#2-2-3-相关资料" class="headerlink" title="2.2.3 相关资料"></a>2.2.3 相关资料</h3><ul>
 <li><a href="http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="external">安装 Git</a></li>
 <li><a href="http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE" target="_blank" rel="external">配置 Git</a></li>
@@ -237,43 +237,43 @@
 <h2 id="2-3-Git-与-GitHub"><a href="#2-3-Git-与-GitHub" class="headerlink" title="2.3 Git 与 GitHub"></a>2.3 Git 与 GitHub</h2><h3 id="2-3-1-git与github的区别"><a href="#2-3-1-git与github的区别" class="headerlink" title="2.3.1 git与github的区别"></a>2.3.1 git与github的区别</h3><p>这里，我们要区分清楚git与github。</p>
 <p>git是一个版本控制的工具，而github有点类似于远程仓库，用于存放用git管理的各种项目。</p>
 <h3 id="2-3-2-与github建立联系"><a href="#2-3-2-与github建立联系" class="headerlink" title="2.3.2 与github建立联系"></a>2.3.2 与github建立联系</h3><p>为了能够在本地使用git管理github上的项目，需要进行一些配置，这里介绍SSH的方法。</p>
-<h4 id="2-3-2-1-检查电脑是否已经有SSH-keys。"><a href="#2-3-2-1-检查电脑是否已经有SSH-keys。" class="headerlink" title="2.3.2.1 检查电脑是否已经有SSH keys。"></a>2.3.2.1 检查电脑是否已经有SSH keys。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br><span class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-1-检查电脑是否已经有SSH-keys。"><a href="#2-3-2-1-检查电脑是否已经有SSH-keys。" class="headerlink" title="2.3.2.1 检查电脑是否已经有SSH keys。"></a>2.3.2.1 检查电脑是否已经有SSH keys。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
 <p>默认情况下，public keys的文件名是以下的格式之一：id_dsa.pub、id_ecdsa.pub、id_ed25519.pub、id_rsa.pub。因此，如果列出的文件有public和private钥匙对（例如id_ras.pub和id_rsa），证明已存在SSH keys。</p>
-<h4 id="2-3-2-2-如果没有SSH-key，则生成新的SSH-key。"><a href="#2-3-2-2-如果没有SSH-key，则生成新的SSH-key。" class="headerlink" title="2.3.2.2 如果没有SSH key，则生成新的SSH key。"></a>2.3.2.2 如果没有SSH key，则生成新的SSH key。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br><span class="line"><span class="comment"># Creates a new ssh key, using the provided email as a label</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-2-如果没有SSH-key，则生成新的SSH-key。"><a href="#2-3-2-2-如果没有SSH-key，则生成新的SSH-key。" class="headerlink" title="2.3.2.2 如果没有SSH key，则生成新的SSH key。"></a>2.3.2.2 如果没有SSH key，则生成新的SSH key。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div><div class="line"><span class="comment"># Creates a new ssh key, using the provided email as a label</span></div></pre></td></tr></table></figure>
 <p>之后一路回车即可。</p>
-<h4 id="2-3-2-3-向ssh-agent添加key。"><a href="#2-3-2-3-向ssh-agent添加key。" class="headerlink" title="2.3.2.3 向ssh-agent添加key。"></a>2.3.2.3 向ssh-agent添加key。</h4><p>首先确保ssh-agent可运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># start the ssh-agent in the background</span></span><br><span class="line">$ ssh-agent <span class="_">-s</span></span><br></pre></td></tr></table></figure></p>
-<p>然后添加SSH key：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-3-2-4-在GitHub添加SSH-key。"><a href="#2-3-2-4-在GitHub添加SSH-key。" class="headerlink" title="2.3.2.4 在GitHub添加SSH key。"></a>2.3.2.4 在GitHub添加SSH key。</h4><p>首先，拷贝key：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="comment"># Copies the contents of the id_rsa.pub file to your cllipboard</span></span><br></pre></td></tr></table></figure></p>
-<p>然后，在GitHub右上方点击头像，选择”Settings”，在右边的”Personal settings”侧边栏选择”SSH Keys”。接着粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"><span class="comment"># Attempts to ssh to GitHub</span></span><br></pre></td></tr></table></figure></p>
-<p>如果你看到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p>
-<p>就键入：yes。之后将会看到如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span><br><span class="line">provide shell access.</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-3-2-3-向ssh-agent添加key。"><a href="#2-3-2-3-向ssh-agent添加key。" class="headerlink" title="2.3.2.3 向ssh-agent添加key。"></a>2.3.2.3 向ssh-agent添加key。</h4><p>首先确保ssh-agent可运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># start the ssh-agent in the background</span></div><div class="line">$ ssh-agent -s</div></pre></td></tr></table></figure></p>
+<p>然后添加SSH key：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure></p>
+<h4 id="2-3-2-4-在GitHub添加SSH-key。"><a href="#2-3-2-4-在GitHub添加SSH-key。" class="headerlink" title="2.3.2.4 在GitHub添加SSH key。"></a>2.3.2.4 在GitHub添加SSH key。</h4><p>首先，拷贝key：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">clip &lt; ~/.ssh/id_rsa.pub</div><div class="line"><span class="comment"># Copies the contents of the id_rsa.pub file to your cllipboard</span></div></pre></td></tr></table></figure></p>
+<p>然后，在GitHub右上方点击头像，选择”Settings”，在右边的”Personal settings”侧边栏选择”SSH Keys”。接着粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line"><span class="comment"># Attempts to ssh to GitHub</span></div></pre></td></tr></table></figure></p>
+<p>如果你看到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure></p>
+<p>就键入：yes。之后将会看到如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span></div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
 <h3 id="2-3-3-相关资料"><a href="#2-3-3-相关资料" class="headerlink" title="2.3.3 相关资料"></a>2.3.3 相关资料</h3><ul>
 <li><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH keys</a></li>
 </ul>
 <h2 id="2-4-Hexo"><a href="#2-4-Hexo" class="headerlink" title="2.4 Hexo"></a>2.4 Hexo</h2><h3 id="2-4-1-安装Hexo"><a href="#2-4-1-安装Hexo" class="headerlink" title="2.4.1 安装Hexo"></a>2.4.1 安装Hexo</h3><p>安装Hexo相当简单。在安装之前，必须检查电脑中是否已经安装下列应用程序：</p>
 <ul>
 <li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
-<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a><br>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a><br>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-4-2-使用Hexo建站"><a href="#2-4-2-使用Hexo建站" class="headerlink" title="2.4.2 使用Hexo建站"></a>2.4.2 使用Hexo建站</h3><p>安装完后，在你喜欢的文件夹内（例如D：\Hexo），点击鼠标右键选择Git bash，输入以下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
 <p>该命令会在目标文件夹内建立网站所需要的所有文件。接下来是安装依赖包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
 <p>这样，我们就已经搭建起本地的Hexo博客了。可以先执行以下命令（在对应文件夹下），然后再浏览器输入localhost:4000查看。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>这个博客只是本地的，别人是浏览不了的，之后需要部署到GitHub上。</p>
 <h3 id="2-4-3-相关资料"><a href="#2-4-3-相关资料" class="headerlink" title="2.4.3 相关资料"></a>2.4.3 相关资料</h3><ul>
 <li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo 官方文档</a></li>
 </ul>
 <h2 id="三、一般的搭建方法"><a href="#三、一般的搭建方法" class="headerlink" title="三、一般的搭建方法"></a>三、一般的搭建方法</h2><p>在上面，我们已经配置好了所需的所有东西，也成功地搭建了一个本地Hexo博客。现在，需要使用GitHub Pages搭建一个别人能够访问的Hexo博客了。</p>
 <h3 id="3-1-使用默认theme"><a href="#3-1-使用默认theme" class="headerlink" title="3.1 使用默认theme"></a>3.1 使用默认theme</h3><p>我们继续使用上面的文件夹D:\Hexo（也可以新建一个文件夹重新生成），然后编辑该文件夹下的_config.yml。</p>
-<p>默认生成的_config.yml：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>:</span><br></pre></td></tr></table></figure></p>
-<p>修改后的_config.yml：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: 对应仓库的SSH地址（可以在GitHub对应的仓库中复制）</span><br><span class="line">  branch: 分支（User Pages为master，Project Pages为gh-pages）</span><br></pre></td></tr></table></figure></p>
+<p>默认生成的_config.yml：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>:</div></pre></td></tr></table></figure></p>
+<p>修改后的_config.yml：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: 对应仓库的SSH地址（可以在GitHub对应的仓库中复制）</div><div class="line">  branch: 分支（User Pages为master，Project Pages为gh-pages）</div></pre></td></tr></table></figure></p>
 <p>为了能够使Hexo部署到GitHub上，需要安装一个插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <p>然后，执行下列指令即可完成部署：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>之后，可以通过在浏览器键入：username.github.io进行浏览，开心吧~</p>
 <h3 id="3-2-其他theme"><a href="#3-2-其他theme" class="headerlink" title="3.2 其他theme"></a>3.2 其他theme</h3><p>如果想要使用其他主题，可以使用git clone将别人的主题拷贝到D:\Hexo\themes下，然后将_config.yml中的theme: landscape改为对应的主题名字。</p>
 <p>详细步骤可以参考网上的指南。</p>
@@ -561,7 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">utf8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,10 +574,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">引用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,19 +593,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">utf8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自动转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,18 +621,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
@@ -642,6 +630,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,11 +665,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">vagrant</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">homestead</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,19 +681,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">管理员</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">tp3.2.3</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHPexcel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">管理员</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,19 +737,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">背景图片缩放</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">表单提交</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">excel导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">背景图片缩放</a>
               </li>
             
             <div class="clearfix"></div>
